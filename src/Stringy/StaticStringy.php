@@ -315,12 +315,13 @@ class StaticStringy
      *
      * @param   string  $haystack  String being checked
      * @param   string  $needle    Substring to look for
+     * @param   bool    $caseSensitive  Whether or not to enforce case-sensitivity
      * @param   string  $encoding  The character encoding
      * @return  bool    Whether or not $haystack contains $needle
      */
-    public static function contains($haystack, $needle, $encoding = null)
+    public static function contains($haystack, $needle, $caseSensitive = true, $encoding = null)
     {
-        return Stringy::create($haystack, $encoding)->contains($needle);
+        return Stringy::create($haystack, $encoding)->contains($needle, $caseSensitive);
     }
 
     /**
